@@ -1,5 +1,6 @@
 import React, { useReducer, useContext } from 'react';
-import { ActionTypes } from '../constants/ActionType';
+import { ActionTypes } from '../constants/ActionTypes';
+import { TaskboardItemStatus } from '../taskboard/TaskboardTypes';
 const generateId = () => Date.now().toString();
 
 
@@ -54,9 +55,9 @@ const onTaskDragTaskItem = (state, { source, destination }) => {
   }
 }
 
-// const onSearchTaskItem = (state, keyword) => {
+const onSearchTaskItem = (state, keyword) => {
 
-// }
+}
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -82,12 +83,31 @@ const reducer = (state, action) => {
 export const TaskContext = React.createContext();
 
 const initialState = {
-  taskList:{
-    ['To Do']:[],
-    ['In Progress']: [],
-    ['Done'] : [],
+  taskList: {
+    ['To Do']: [
+      {
+        id: '1701034066807',
+        title: 'Complete Project Proposal',
+        description: 'Draft and finalize the project proposal.'
+      },
+      {
+        id: '1701034066808',
+        title: 'Research New Technologies',
+        description: 'Explore and gather information on the latest technologies.'
+      }
+    ],
+    ['In Progress']: [
+      {
+        id: '1701034066809',
+        title: 'Design Mockups',
+        description: 'Create initial mockups for the user interface.'
+      }
+    ],
+    ['Done']: [],
   }
 };
+
+
 
 function TaskProvider(props) {
     const [state, dispatch] = useReducer(reducer, initialState);
