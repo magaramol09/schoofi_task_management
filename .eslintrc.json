@@ -1,0 +1,30 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": [
+        "react",
+        "react-hooks"
+    ],
+    "rules": {
+        "react/prop-types": "off", // Disable prop-types validation
+        "react/react-in-jsx-scope": "off", // Not required when using React 17+
+        "react/display-name": "off", // Disable display name requirement for components
+        "react/jsx-uses-react": "off", // Not required when using React 17+
+        "react-hooks/rules-of-hooks": "error", // Enforce hooks rules
+        "react-hooks/exhaustive-deps": "warn" // Warn if dependencies are not specified in useEffect/useCallback
+    }
+}
