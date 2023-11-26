@@ -1,7 +1,7 @@
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 import styled from 'styled-components';
 import { Button, Card } from 'antd';
-import TaskboardItemCard from './TaskitemCard';
+import TaskboardItemCard from '../components/TaskitemCard';
 import { colors } from '../shared/SharedUtils';
 
 const TaskboardColRoot = styled(Card)`

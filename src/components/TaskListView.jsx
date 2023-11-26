@@ -62,7 +62,7 @@ function Taskboard() {
             <DragDropContext onDragEnd={handleDragEnd}>
                 <TaskboardRoot>
                     <TaskboardContent>
-                        {Object.values(taskList).map((status) => (
+                        {Object.values(TaskboardItemStatus).map((status) => (
                             <TaskboardCol
                                 key={status}
                                 status={status}
